@@ -1,25 +1,18 @@
-/******************************************************************************
 
-Welcome to GDB Online.
-  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
-  Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
 #define MEM_SIZE 256
 
-// Estrutura para facilitar a explicação: cada campo da instrução é isolado
+//  cada campo da instrução é isolado
 struct instrucao {
     char inst_bin[17]; 
     char nome[10];
     int opcode, rs, rt, rd, funct, imm, addr;
 };
 
-// 1. CONVERSÃO: O arquivo tem HEX (Base 16), mas o MIPS trabalha com BIN (Base 2)
+// CONVERSÃO: O arquivo tem HEX (Base 16), mas o MIPS trabalha com BIN (Base 2)
 void hex_para_bin(char *hex, char *bin) {
     long val = strtol(hex, NULL, 16);
     for (int i = 15; i >= 0; i--) {
@@ -29,7 +22,7 @@ void hex_para_bin(char *hex, char *bin) {
     bin[16] = '\0';
 }
 
-// 2. MAPEAMENTO: Traduz os códigos da tabela da imagem para nomes legíveis
+//  MAPEAMENTO: Traduz os códigos da tabela
 void definir_nome(struct instrucao *inst) {
     if (inst->opcode == 0) { // Tipo R: O nome depende do campo FUNCT (últimos 3 bits)
         switch(inst->funct) {
@@ -51,7 +44,7 @@ void definir_nome(struct instrucao *inst) {
     }
 }
 
-// 3. DECODIFICAÇÃO: "Fatiar" a string de bits conforme o formato da instrução
+//  DECODIFICAÇÃO: Fatiar a string de bits conforme o formato da instrução
 void decodificador(struct instrucao *inst) {
     char temp[13]; // Buffer para extrair partes da string
     
