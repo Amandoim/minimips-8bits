@@ -9,7 +9,8 @@ int clock = 0; // sinal de clock (comportamento do meu processador)
 //  Inicialização 
 void init_regs() {
     for (int i = 0; i < NUM_REGS; i++) { // estamos percorrendo todos os registradores
-        regs[i] = 0;
+        regs[i] = 0; //  colocandon valor 0 em cada registrador
+
     }
 }
 
