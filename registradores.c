@@ -3,7 +3,7 @@
 #define NUM_REGS 8 // numeros de registradores (R0 a R7)
 
 int regs[NUM_REGS]; // banco de registradores
-int clock = 0; // sinal de clock (0 ou 1)
+int clock = 0; // sinal de clock (comportamento do meu processador)
 
 
 //  Inicialização 
