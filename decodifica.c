@@ -1,6 +1,6 @@
-// Função responsável por decodificar uma instrução binária
+// Função responsável por decodificar uma instrução binária,string 0 e 1
 void decodificador(struct instrucao *inst) {
-    char temp[13]; // Buffer auxiliar para armazenar partes da instrução
+    char temp[13]; // Buffer auxiliar para armazenar partes da instrução é usado para copiar pedaços da instrução binária antes de converter para número.
 
     // Extrai o opcode (4 primeiros bits)
     strncpy(temp, inst->inst_bin, 4);
