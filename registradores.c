@@ -22,7 +22,7 @@ void read_regs(int rs, int rt, int *out1, int *out2) {
 }
 
 
-//  Escrita (1 porta, sincronizada)
+//  escreve um valor em um registrador
 void write_reg(int reg_dest, int value, int RegWrite) { // onde escreve, valor a guardar e o sinal de controle
     if (clock == 1 && RegWrite && reg_dest != 0) {
         regs[reg_dest] = value; // gravando o valor no registrador de destino
