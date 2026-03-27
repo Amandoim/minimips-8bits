@@ -17,7 +17,7 @@ void init_regs() {
 
 // Leitura (2 portas/ leituras)
 void read_regs(int rs, int rt, int *out1, int *out2) {
-    *out1 = regs[rs];
+    *out1 = regs[rs]; // valores são retornados atraves do ponteiro 
     *out2 = regs[rt];
 }
 
