@@ -6,7 +6,7 @@ int regs[NUM_REGS]; // banco de registradores
 int clock = 0; // sinal de clock (0 ou 1)
 
 
-//  Inicialização
+//  InicializaÃ§Ã£o 
 void init_regs() {
     for (int i = 0; i < NUM_REGS; i++) { // estamos percorrendo todos os registradores
         regs[i] = 0;
